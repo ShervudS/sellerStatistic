@@ -1,0 +1,31 @@
+.header{
+ padding: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(1920px, 95%);
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.statistic{
+
+}
+
+.control{
+  display: flex;
+  align-items: center;
+}
+
+.buttonSettings{
+  padding: 5px;
+  border-color: transparent;
+
+  svg{
+    width: 16px;
+    height: 16px;
+  }
+}

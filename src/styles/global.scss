@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button{
+  border: 1px solid #000;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select{
+  outline: none;
+}
+

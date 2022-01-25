@@ -1,0 +1,10 @@
+.next
+.idea
+.git
+node_modules
+.node_history
+logs
+public
+dist
+
+.env
