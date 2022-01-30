@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+
+.title {
+  margin: 0 auto;
+  font: normal 100px/120% 'arial';
+  text-align: center;
+}
+
+.backBtn {
+  margin: 0 auto;
+  padding: 10px 20px;
+  font: normal 16px/145% 'arial';
+  color: $color-beige;
+  background-color: $color-black-secondary;
+}

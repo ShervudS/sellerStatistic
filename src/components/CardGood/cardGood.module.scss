@@ -1,0 +1,11 @@
+@import "../../styles/variables";
+
+.card{
+  min-height: 100px;
+  width: 450px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid $color-beige;
+  border-radius: 8px;
+  background-color: $color-black-secondary;
+}

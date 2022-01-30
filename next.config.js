@@ -1,5 +1,6 @@
 const path = require('path');
 const loaderUtils = require('loader-utils');
+const nextTranslate = require('next-translate');
 
 const hashOnlyIdent = (context, _, exportName) =>
     loaderUtils
@@ -16,6 +17,12 @@ const hashOnlyIdent = (context, _, exportName) =>
         .replace(/^(-?\d|--)/, '_$1');
 
 module.exports = {
+    webpack(config) {
+        config.resolve.alias = {
+            ...config.resolve.alias,
+        };
+    },
+
     webpack(config, { dev }) {
         const rules = config.module.rules
             .find((rule) => typeof rule.oneOf === 'object')
@@ -46,4 +53,11 @@ module.exports = {
 
         return config;
     },
+
+    env: {
+        MAIN_WB_URL: process.env.MAIN_WB_URL,
+        WB_TOKEN: process.env.WB_TOKEN,
+    },
+
+    ...nextTranslate(),
 };

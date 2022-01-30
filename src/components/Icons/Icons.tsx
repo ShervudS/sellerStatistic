@@ -1,3 +1,4 @@
+import React, { FC } from 'react';
 import IconSettings from '../../assets/images/icon/icon-settings.svg';
 
 import styles from './Icons.module.scss';
@@ -9,7 +10,7 @@ interface IconProps {
     afterLabel?: string;
 }
 
-const Icons = ({ name, classes, beforeLabel, afterLabel }: IconProps) => {
+const Icons: FC<IconProps> = ({ name, classes, beforeLabel, afterLabel }) => {
     // const { name = '', classes = '', beforeLabel, afterLabel } = props;
 
     return (

@@ -1,13 +1,12 @@
-import MainLayout from "../components/MainLayout/MainLayout";
-import Test from "../components/testComponent/Test";
+import MainLayout from '../components/MainLayout/MainLayout';
+import WbStatistic from '../components/WbStatistic/WbStatistic';
 
 const Home = () => {
-  return (
-    <MainLayout>
-      sdjfabdfjhasbhjb
-      <Test />
-    </MainLayout>
-  );
+    return (
+        <MainLayout>
+            <WbStatistic />
+        </MainLayout>
+    );
 };
 
 export default Home;

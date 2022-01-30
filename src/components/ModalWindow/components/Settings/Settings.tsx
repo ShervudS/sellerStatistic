@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useAppSelector, useAppDispatch } from '../../../../redux/hooks';
 
 import ModalWindow from '../../ModalWindow';
@@ -32,7 +32,7 @@ const optionsTimeRequestWb = [
     },
 ];
 
-const Settings = ({}: SettingsProps) => {
+const Settings: FC<SettingsProps> = ({}) => {
     const dispatch = useAppDispatch();
     const state = useAppSelector(selectApp);
     const { wbToken } = state;

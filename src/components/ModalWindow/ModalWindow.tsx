@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
 import { setIsModalOpen, selectApp } from '../../redux/appReducer';
@@ -7,10 +7,9 @@ import styles from './ModalWindow.module.scss';
 
 interface ModalWindowProps {
     title: string;
-    children?: React.ReactChildren | React.ReactNode;
 }
 
-const ModalWindow = ({ children, title }: ModalWindowProps) => {
+const ModalWindow: FC<ModalWindowProps> = ({ children, title }) => {
     const dispatch = useAppDispatch();
 
     const state = useAppSelector(selectApp);
