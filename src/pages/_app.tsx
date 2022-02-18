@@ -8,7 +8,7 @@ const MyApp = ({ Component, pageProps }) => {
     return (
         <>
             <Head>
-                <title>текст</title>
+                <title>Seller Statistic</title>
             </Head>
             <Provider store={store}>
                 <Component {...pageProps} />

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useAppSelector, useAppDispatch } from '../../../../redux/hooks';
 
-import ModalWindow from '../../ModalWindow';
+import ModalWindow from '../..';
 
 import { setIsWbToken, selectApp } from '../../../../redux/appReducer';
 

@@ -12,11 +12,14 @@ const hashOnlyIdent = (context, _, exportName) =>
             ),
             'md4',
             'base64',
-            5
+            6
         )
-        .replace(/^(-?\d|--)/, '_$1');
+        // replace invalid symbols with underscores instead of escaping
+        .replace(/[^a-zA-Z0-9-_]/g, '_')
+        // cannot start with a digit, two hyphens, or a hyphen followed by a digit
+        .replace(/^(\d|--|-\d)/, '__$1');
 
-module.exports = {
+module.exports = nextTranslate({
     webpack(config) {
         config.resolve.alias = {
             ...config.resolve.alias,
@@ -37,11 +40,6 @@ module.exports = {
                     )
                         moduleLoader.options.modules.getLocalIdent =
                             hashOnlyIdent;
-                    // moduleLoader.options.modules.localIdentName = "[hash:base64:6]";
-
-                    // earlier below statements were sufficient:
-                    // delete moduleLoader.options.modules.getLocalIdent;
-                    // moduleLoader.options.modules.localIdentName = '[hash:base64:6]';
                 });
             });
 
@@ -54,10 +52,14 @@ module.exports = {
         return config;
     },
 
+    i18n: {
+        locales: ['ru', 'en'],
+        defaultLocale: 'ru',
+        localeDetection: false,
+    },
+
     env: {
         MAIN_WB_URL: process.env.MAIN_WB_URL,
         WB_TOKEN: process.env.WB_TOKEN,
     },
-
-    ...nextTranslate(),
-};
+});

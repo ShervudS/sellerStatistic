@@ -1,0 +1,21 @@
+@mixin font-face($family, $weight, $style: normal) {
+    $baseurl: '/src/assets/fonts/';
+    $url: '#{$baseurl}#{$family}/#{$family}-#{$weight}';
+    $url-style: '#{$baseurl}#{$family}/#{$family}-#{$weight}-#{$style}';
+
+    @font-face {
+        font-family: $family;
+
+        @if $style == italic {
+            src: url('#{$url-style}.woff') format('woff'),
+                url('#{$url-style}.woff2') format('woff2');
+        } @else {
+            src: url('#{$url}.woff') format('woff'),
+                url('#{$url}.woff2') format('woff2');
+        }
+
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+    }
+}

@@ -1,36 +1,40 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .header {
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: $color-black-secondary;
-  box-shadow: 0px -10px 5px -5px rgba(0, 0, 0, 0.37) inset;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: $color-black-secondary;
+    box-shadow: 0px -10px 5px -5px rgba(0, 0, 0, 0.37) inset;
+}
+
+.logo {
+    font: normal 700 1.8rem/120% $font-primary;
 }
 
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: min(1920px, 95%);
-  margin: 0 auto;
-  padding: 0 15px;
+    max-width: min(1920px, 95%);
+    width: 100%;
+    margin: 0 auto;
 }
 
-.statistic {
-
+.containerHeader {
+    @extend .container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .control {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .buttonSettings {
-  padding: 5px;
-  border-color: transparent;
+    padding: 5px;
+    border-color: transparent;
 
-  svg {
-    width: 24px;
-    height: 24px;
-  }
+    svg {
+        width: 24px;
+        height: 24px;
+    }
 }

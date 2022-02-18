@@ -1,4 +1,4 @@
-import MainLayout from '../../components/MainLayout/MainLayout';
+import MainLayout from '../../components/MainLayout';
 import Link from 'next/link';
 
 import styles from './page404.module.scss';

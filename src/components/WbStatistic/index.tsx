@@ -3,8 +3,8 @@ import { useAppSelector } from '../../redux/hooks';
 import { selectApp } from '../../redux/appReducer';
 
 import styles from './WbStatistic.module.scss';
-import Orders from '../Orders/Orders';
-import Sales from '../Sales/Sales';
+import Orders from '../Orders';
+import Sales from '../Sales';
 
 interface WbStatisticProps {}
 
@@ -14,8 +14,8 @@ const WbStatistic: FC<WbStatisticProps> = ({}) => {
 
     return (
         <div className={styles.statistic}>
-            <Orders wbOrders={wbOrders} />
-            <Sales wbSales={wbSales} />
+            <Orders wbOrders={wbOrders} wbSales={wbSales}/>
+            {/* <Sales wbSales={wbSales} /> */}
         </div>
     );
 };

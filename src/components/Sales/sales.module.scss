@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+
+.sales {
+    width: 100%;
+}
+
+.title {
+    margin-bottom: 1.2rem;
+    padding-left: 1rem;
+    font: normal 700 1.8rem/120% $font-primary;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 10px;
+}
