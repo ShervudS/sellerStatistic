@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useAppSelector } from '../../redux/hooks';
-import { selectApp } from '../../redux/appReducer';
+import { selectApp } from '../../redux/redusers/appReducer';
 
 import styles from './WbStatistic.module.scss';
 import Orders from '../Orders';
@@ -14,7 +14,7 @@ const WbStatistic: FC<WbStatisticProps> = ({}) => {
 
     return (
         <div className={styles.statistic}>
-            <Orders wbOrders={wbOrders} wbSales={wbSales}/>
+            <Orders wbOrders={wbOrders} wbSales={wbSales} />
             {/* <Sales wbSales={wbSales} /> */}
         </div>
     );

@@ -3,7 +3,7 @@ import { useAppSelector, useAppDispatch } from '../../../../redux/hooks';
 
 import ModalWindow from '../..';
 
-import { setIsWbToken, selectApp } from '../../../../redux/appReducer';
+import { setIsWbToken, selectApp } from '../../../../redux/redusers/appReducer';
 
 import styles from './settings.module.scss';
 

@@ -1,0 +1,89 @@
+@import './src/styles/variables';
+
+.aside {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  width: 100%;
+  height: calc(100vh - 2rem);
+  padding: 1.7rem .9rem;
+  border-radius: 1.2rem;
+  background-color: $color-item-bg;
+}
+
+.logo {
+  font: normal 700 1.8rem/120% $font-primary;
+}
+
+.asideRow {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.asideCol {
+  flex: 1 auto;
+}
+
+.asideMode {
+  border-radius: 50%;
+  max-width: 3rem;
+  width: 100%;
+  max-height: 3rem;
+  padding: .5rem;
+  border: none;
+  transition: background-color .2s ease-in;
+
+  &:hover {
+    background-color: $color-default-bg;
+  }
+
+  svg {
+    fill: transparent;
+  }
+}
+
+.asideList {
+  display: flex;
+  flex-direction: column;
+}
+
+.asideItem {
+  + .asideItem {
+    margin-top: .7rem;
+  }
+}
+
+.itemWrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 1.3rem 1.2rem;
+  border-radius: 1.2rem;
+  transition: background-color .2s ease-in;
+
+  &:hover {
+    background-color: $color-item-hovered;
+  }
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  span {
+    margin-left: 1.5rem;
+    font: normal 600 1.5rem/145% $font-primary;
+  }
+}
+
+.itemActive {
+  background-color: rgba($color-item-hovered, .5);
+}

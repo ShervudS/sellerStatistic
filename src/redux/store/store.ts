@@ -1,6 +1,6 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 
-import appReducer from './appReducer';
+import appReducer from '../redusers/appReducer';
 
 export function makeStore() {
     return configureStore({

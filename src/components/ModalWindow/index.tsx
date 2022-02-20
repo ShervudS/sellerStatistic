@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
-import { setIsModalOpen, selectApp } from '../../redux/appReducer';
+import { setIsModalOpen, selectApp } from '../../redux/redusers/appReducer';
 
 import styles from './ModalWindow.module.scss';
 

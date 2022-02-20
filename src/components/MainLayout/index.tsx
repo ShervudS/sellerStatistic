@@ -1,18 +1,18 @@
 import React, { FC, useEffect } from 'react';
-import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import axios from 'axios';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
 import Settings from '../ModalWindow/components/Settings';
+import Aside from './components/Aside';
 
 import {
     setIsModalOpen,
     setWbOrders,
     setWbSales,
     selectApp,
-} from '../../redux/appReducer';
+} from '../../redux/redusers/appReducer';
 
 import styles from './mainLayout.module.scss';
-import IconSettings from '../../assets/images/icon/icon-settings.svg';
 import { getWbData } from '../../api/WbAPI';
 
 interface MainLayoutProps {}
@@ -52,32 +52,13 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
     }, []);
 
     return (
-        <>
-            <header className={styles.header}>
-                <div className={styles.containerHeader}>
-                    <div className={styles.logo}>Seller Statistic</div>
+        <div className={styles.mainLayout}>
+            <Aside />
 
-                    <div className={styles.statistic}>
-                        статус: обновлено | не обновлено
-                    </div>
-
-                    <div className={styles.control}>
-                        <button
-                            className={styles.buttonSettings}
-                            onClick={() =>
-                                dispatch(setIsModalOpen(!isModalOpen))
-                            }
-                        >
-                            <IconSettings />
-                        </button>
-                    </div>
-                </div>
-            </header>
-
-            <div className={styles.container}>{children}</div>
+            <div className={styles.mainContent}>{children}</div>
 
             {isModalOpen && <Settings />}
-        </>
+        </div>
     );
 };
 

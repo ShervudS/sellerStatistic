@@ -1,0 +1,45 @@
+@import './mixin';
+@import 'variables';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 10px; // = 1rem
+}
+
+body {
+  min-height: 100vh;
+  background-color: $color-default-bg;
+  color: $color-beige;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  border: 1px solid #000;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
