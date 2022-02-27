@@ -2,8 +2,8 @@ import React, { FC, useEffect } from 'react';
 import axios from 'axios';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
-import Settings from '../ModalWindow/components/Settings';
 import Aside from './components/Aside';
+import ModalWindow from '../ModalWindow';
 
 import {
     setIsModalOpen,
@@ -27,7 +27,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
         async function getWbOrders(url) {
             try {
                 const res = await axios.get(
-                    `${process.env.MAIN_WB_URL}/${url}?dateFrom=2022-02-10T08:44:50.379&key=${process.env.WB_TOKEN}`
+                    `${process.env.MAIN_WB_URL}/${url}?dateFrom=2022-02-20T08:44:50.379&key=${process.env.WB_TOKEN}`
                 );
                 dispatch(setWbOrders(res.data));
             } catch (e) {
@@ -38,7 +38,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
         async function getWbSales(url) {
             try {
                 const res = await axios.get(
-                    `${process.env.MAIN_WB_URL}/${url}?dateFrom=2022-02-10T08:44:50.379&key=${process.env.WB_TOKEN}`
+                    `${process.env.MAIN_WB_URL}/${url}?dateFrom=2022-02-20T08:44:50.379&key=${process.env.WB_TOKEN}`
                 );
                 dispatch(setWbSales(res.data));
             } catch (e) {
@@ -57,7 +57,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 
             <div className={styles.mainContent}>{children}</div>
 
-            {isModalOpen && <Settings />}
+            <ModalWindow />
         </div>
     );
 };

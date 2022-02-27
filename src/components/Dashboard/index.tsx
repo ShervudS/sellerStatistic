@@ -24,7 +24,10 @@ const Index: FC<DashboardProps> = ({}) => {
         <div className={styles.dashboard}>
             <div className={styles.topItem}>
                 <div className={styles.controls}>
-                    <button className={styles.btn}>
+                    <button
+                        className={styles.btn}
+                        onClick={() => dispatch(setIsModalOpen(!isModalOpen))}
+                    >
                         <IconSettings />
                     </button>
 

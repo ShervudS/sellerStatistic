@@ -50,7 +50,7 @@ const Settings: FC<SettingsProps> = ({}) => {
                 <textarea
                     className={styles.inputToken}
                     placeholder="Введите API Token"
-                    defaultValue={localStorage.getItem('wbToken') || wbToken}
+                    // defaultValue={localStorage.getItem('wbToken') || wbToken}
                     onChange={(e) => changeWbToken(e.target.value)}
                 />
             </div>
