@@ -1,22 +1,37 @@
 @import '../../styles/variables';
 
 .card {
-    position: relative;
-    min-height: 100px;
-    width: 350px;
-    padding: 10px;
-    border: 1px solid $color-beige;
-    border-radius: 8px;
-    background-color: $color-black-secondary;
+  position: relative;
+  min-height: 100px;
+  max-width: 450px;
+  padding: 20px 18px;
+  border-radius: 8px;
+  background-color: $bg-color-item;
 }
 
 .status {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    color: orange;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font: normal 400 1rem/120% $font-primary;
+  color: orange;
 }
 
-.satusDone {
-    color: green;
+.statusDone {
+  color: green;
+}
+
+.title {
+  margin-bottom: 1.2rem;
+  font: normal 600 1.8rem/120% $font-primary;
+  color: $color-white;
+
+  span {
+    font-weight: 400;
+  }
+}
+
+.line{
+  margin-bottom: .5rem;
+  font: normal 400 1.2rem/120% $font-primary;
 }

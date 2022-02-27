@@ -25,7 +25,7 @@ const CardGood: FC<CardGoodProps> = ({
     isSales,
 }) => {
     const clasStatus = classNames(styles.status, {
-        [styles.satusDone]: isSales,
+        [styles.statusDone]: isSales,
     });
 
     return (
@@ -33,14 +33,18 @@ const CardGood: FC<CardGoodProps> = ({
             <div className={clasStatus}>
                 {isSales ? 'продано' : 'в процессе'}
             </div>
-            <p>Заказ №: {gNumber}</p>
-            {brand && <p>Бренд: {brand}</p>}
-            <p>Категория товара: {category}</p>
-            <p>Регион (область): {oblast}</p>
-            <p>
+
+            <p className={styles.title}>
+                Заказ №:<span> {gNumber}</span>
+            </p>
+
+            {brand && <p className={styles.line}>Бренд: {brand}</p>}
+            <p className={styles.line}>Категория товара: {category}</p>
+            <p className={styles.line}>Регион (область): {oblast}</p>
+            <p className={styles.line}>
                 Товар: {subject}/{supplierArticle}
             </p>
-            <p>date: {date}</p>
+            <p className={styles.line}>Дата : {date}</p>
         </div>
     );
 };
